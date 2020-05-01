@@ -1,0 +1,30 @@
+api:
+  dashboard: true
+  debug: true
+
+entryPoints:
+  http:
+    address: ":80"
+  https:
+    address: ":443"
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+  file:
+    filename: /config.yml
+
+certificatesResolvers:
+  http:
+    acme:
+      email: digital@grinnell.edu
+      storage: acme.json
+      httpChallenge:
+        entryPoint: http
+  dns:
+    acme:
+      email: digital@grinnell.edu
+      storage: acme.json
+      dnsChallenge:
+        entryPoint: http
