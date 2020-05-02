@@ -35,15 +35,15 @@ services:
       - "traefik.http.routers.traefik-secure.tls=true"
       - "traefik.http.routers.traefik-secure.service=api@internal"
       - "traefik.http.services.traefik.loadbalancer.server.port=8080"
-
       - "traefik.http.routers.traefik-secure.tls.certresolver=dns"
+      # - "traefik.http.routers.traefik-secure.tls.certresolver=http"
     environment:
-      AZURE_CLIENT_ID: ${AZURE_CLIENT_ID} 
-      AZURE_CLIENT_SECRET: ${AZURE_CLIENT_SECRET}
-      AZURE_SUBSCRIPTION_ID: ${AZURE_SUBSCRIPTION_ID}
-      AZURE_TENANT_ID: ${AZURE_TENANT_ID}
-      AZURE_DNS_ZONE: ${AZURE_DNS_ZONE}
-      AZURE_RESOURCE_GROUP: ${AZURE_RESOURCE_GROUP}
+      AZURE_CLIENT_ID: "${AZURE_CLIENT_ID}"
+      AZURE_CLIENT_SECRET: "${AZURE_CLIENT_SECRET}"
+      AZURE_SUBSCRIPTION_ID: "${AZURE_SUBSCRIPTION_ID}"
+      AZURE_TENANT_ID: "${AZURE_TENANT_ID}"
+      AZURE_DNS_ZONE: "${AZURE_DNS_ZONE}"
+      AZURE_RESOURCE_GROUP: "${AZURE_RESOURCE_GROUP}"
 
 networks:
   proxy:
