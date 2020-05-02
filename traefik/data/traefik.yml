@@ -20,7 +20,7 @@ certificatesResolvers:
     acme:
       email: digital@grinnell.edu
       storage: acme.json
-      dnsChallenge:
-        provider: azure
-      # httpChallenge:
-      #   entryPoint: http
+      httpChallenge:
+       entryPoint: http
+      # dnsChallenge:
+      #   provider: azure
