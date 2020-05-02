@@ -16,15 +16,11 @@ providers:
     filename: /config.yml
 
 certificatesResolvers:
-  dns:
+  letsencrypt:
     acme:
       email: digital@grinnell.edu
       storage: acme.json
       dnsChallenge:
         entryPoint: http
-  #  http:
-  #    acme:
-  #      email: digital@grinnell.edu
-  #      storage: acme.json
-  #      httpChallenge:
-  #        entryPoint: http
+      # httpChallenge:
+      #   entryPoint: http
