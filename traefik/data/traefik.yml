@@ -24,3 +24,8 @@ certificatesResolvers:
         entryPoint: http
       # dnsChallenge:
       #   provider: azure
+
+log:
+  level: DEBUG
+  filePath: /opt/containers/traefik/traefik.log
+  
