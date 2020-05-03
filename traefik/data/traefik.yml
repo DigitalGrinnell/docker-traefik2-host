@@ -1,6 +1,5 @@
 api:
   dashboard: true
-  debug: true
 
 entryPoints:
   http:
@@ -12,19 +11,42 @@ providers:
   docker:
     endpoint: "unix:///var/run/docker.sock"
     exposedByDefault: false
-  file:
-    filename: /config.yml
 
 certificatesResolvers:
-  myresolver:
+  http:
     acme:
-      email: digital@grinnell.edu
+      email: email@example.com
       storage: acme.json
       httpChallenge:
         entryPoint: http
-      # dnsChallenge:
-      #   provider: azure
 
-log:
-  level: DEBUG
-  filePath: /opt/containers/traefik/logs/traefik.log
+# api:
+#   dashboard: true
+#   debug: true
+#
+# entryPoints:
+#   http:
+#     address: ":80"
+#   https:
+#     address: ":443"
+#
+# providers:
+#   docker:
+#     endpoint: "unix:///var/run/docker.sock"
+#     exposedByDefault: false
+#   file:
+#     filename: /config.yml
+#
+# certificatesResolvers:
+#   myresolver:
+#     acme:
+#       email: digital@grinnell.edu
+#       storage: acme.json
+#       httpChallenge:
+#         entryPoint: http
+#       # dnsChallenge:
+#       #   provider: azure
+#
+# log:
+#   level: DEBUG
+#   filePath: /opt/containers/traefik/logs/traefik.log
