@@ -20,7 +20,6 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=http"
-      #- "traefik.http.routers.traefik.rule=Host(`traefik.example.com`)"
       - "traefik.http.routers.traefik.rule=Host(`static.grinnell.edu`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
       - "traefik.http.middlewares.traefik-auth.basicauth.users=admin:$$2y$$05$$pJEzHJBzfoYYS7/hGAedcOP8XdsqNXE7j.LHFBVjueASOqOvvjGOy"
       - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
