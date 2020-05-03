@@ -27,5 +27,4 @@ certificatesResolvers:
 
 log:
   level: DEBUG
-  filePath: /opt/containers/traefik/traefik.log
-  
+  filePath: /opt/containers/traefik/logs/traefik.log
