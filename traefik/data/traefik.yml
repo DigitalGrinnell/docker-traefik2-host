@@ -10,8 +10,8 @@ entryPoints:
 # CA server to use.
 # - Uncomment BOTH lines to run on the staging let's encrypt server.
 # - Leave comments to go to prod.
-acme:
-  caServer: https://acme-staging.api.letsencrypt.org/directory
+#acme:
+#  caServer: https://acme-staging.api.letsencrypt.org/directory
 
 providers:
   docker:
@@ -21,7 +21,8 @@ providers:
 certificatesResolvers:
   http:
     acme:
-      email: email@example.com
+      caServer: https://acme-staging.api.letsencrypt.org/directory
+      email: digital@grinnell.edu
       storage: acme.json
       httpChallenge:
         entryPoint: http
