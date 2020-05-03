@@ -18,42 +18,28 @@ providers:
     endpoint: "unix:///var/run/docker.sock"
     exposedByDefault: false
 
+# for HTTP-01 challenge
 certificatesResolvers:
   http:
     acme:
+      # - Uncomment caServer line below to run on the staging let's encrypt server.  Leave comment to go to prod.
       caServer: https://acme-staging.api.letsencrypt.org/directory
       email: digital@grinnell.edu
       storage: acme.json
       httpChallenge:
         entryPoint: http
 
-# api:
-#   dashboard: true
-#   debug: true
-#
-# entryPoints:
-#   http:
-#     address: ":80"
-#   https:
-#     address: ":443"
-#
-# providers:
-#   docker:
-#     endpoint: "unix:///var/run/docker.sock"
-#     exposedByDefault: false
-#   file:
-#     filename: /config.yml
-#
+# # for DNS-01 challenge
 # certificatesResolvers:
-#   myresolver:
+#   http:
 #     acme:
+#       # - Uncomment caServer line below to run on the staging let's encrypt server.  Leave comment to go to prod.
+#       caServer: https://acme-staging.api.letsencrypt.org/directory
 #       email: digital@grinnell.edu
 #       storage: acme.json
-#       httpChallenge:
-#         entryPoint: http
-#       # dnsChallenge:
-#       #   provider: azure
-#
-# log:
-#   level: DEBUG
-#   filePath: /opt/containers/traefik/logs/traefik.log
+#       dnsChallenge:
+#         provider: azure
+
+log:
+  level: DEBUG
+  filePath: /opt/containers/traefik/logs/traefik.log
