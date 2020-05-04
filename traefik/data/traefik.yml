@@ -17,7 +17,7 @@ certificatesResolvers:
   http:
     acme:
       # - Uncomment caServer line below to run on the staging let's encrypt server.  Leave comment to go to prod.
-      caServer: https://acme-staging-v02.api.letsencrypt.org/directory
+      # caServer: https://acme-staging-v02.api.letsencrypt.org/directory
       email: digital@grinnell.edu
       storage: acme.json
       httpChallenge:
