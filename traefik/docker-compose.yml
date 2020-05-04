@@ -2,8 +2,9 @@ version: '3'
 
 services:
   traefik:
-    image: traefik:latest
+    image: traefik:2.2.1
     container_name: traefik
+    hostname: traefik
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
