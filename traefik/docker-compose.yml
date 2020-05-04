@@ -17,7 +17,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./data/traefik.yml:/traefik.yml:ro
       - ./data/acme.json:/acme.json
-      - ./logs/traefik.log:/tmp/traefik.log
     labels:
       - "traefik.enable=true"
       # next 4 lines...universal http --> https redirect per https://community.containo.us/t/a-global-http-https-redirection/864/3
