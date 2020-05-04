@@ -44,3 +44,4 @@ environment:
 
 log:
   level: DEBUG
+  filePath: "/tmp/traefik.log"
