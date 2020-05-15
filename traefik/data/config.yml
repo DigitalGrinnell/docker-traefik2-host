@@ -3,3 +3,4 @@ http:
     https-redirect:
       redirectScheme:
         scheme: https
+
