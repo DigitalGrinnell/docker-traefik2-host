@@ -12,27 +12,27 @@ providers:
     endpoint: "unix:///var/run/docker.sock"
     exposedByDefault: false
 
-## for HTTP-01 challenge
-certificatesResolvers:
-  http:
-    acme:
-      # - Uncomment caServer line below to run on the staging let's encrypt server.  Leave comment to go to prod.
-      caServer: https://acme-staging-v02.api.letsencrypt.org/directory
-      email: digital@grinnell.edu
-      storage: acme.json
-      httpChallenge:
-        entryPoint: http
+# ## for HTTP-01 challenge
+# certificatesResolvers:
+#   http:
+#     acme:
+#       # - Uncomment caServer line below to run on the staging let's encrypt server.  Leave comment to go to prod.
+#       caServer: https://acme-staging-v02.api.letsencrypt.org/directory
+#       email: digital@grinnell.edu
+#       storage: acme.json
+#       httpChallenge:
+#         entryPoint: http
 
 ## for DNS-01 challenge
-#certificatesResolvers:
-#  http:
-#    acme:
-#      # - Uncomment caServer line below to run on the staging Let's Encrypt server.  Leave comment to go to prod.
-#      caServer: https://acme-staging-v02.api.letsencrypt.org/directory
-#      email: digital@grinnell.edu
-#      storage: acme.json
-#      dnsChallenge:
-#        provider: azure
+certificatesResolvers:
+ http:
+   acme:
+     # - Uncomment caServer line below to run on the staging Let's Encrypt server.  Leave comment to go to prod.
+     caServer: https://acme-staging-v02.api.letsencrypt.org/directory
+     email: digital@grinnell.edu
+     storage: acme.json
+     dnsChallenge:
+       provider: azure
 
 environment:
   AZURE_CLIENT_ID: "${AZURE_CLIENT_ID}"
